@@ -20,8 +20,12 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                  'assets/logo_olx.jpg'), // Corrigindo a importação da imagem
+              CircleAvatar(
+                radius: 80, // Defina o tamanho desejado
+                backgroundColor: Colors.white, // Cor de fundo do círculo
+                backgroundImage: AssetImage('assets/logo_olx.jpg'),
+              ),
+              SizedBox(height: 50), // Corrigindo a importação da imagem
               TextField(
                 onChanged: (text) {
                   setState(() {
@@ -33,11 +37,12 @@ class _LoginPageState extends State<LoginPage> {
                   border: OutlineInputBorder(),
                   labelStyle: TextStyle(
                     fontWeight: FontWeight.bold,
+                    fontSize: 25,
                   ), // Adicionar negrito
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: 30,
               ),
               TextField(
                 onChanged: (text) {
@@ -51,14 +56,20 @@ class _LoginPageState extends State<LoginPage> {
                   border: OutlineInputBorder(),
                   labelStyle: TextStyle(
                     fontWeight: FontWeight.bold,
+                    fontSize: 25,
                   ), // Adicionar negrito
                 ),
               ),
-              ButtonTheme(
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30.0),
+                child: ButtonTheme(
                   height: 60,
                   child: ElevatedButton(
                     onPressed: () {
-                      if (email == 'francisco.com.br' && password == '123') {
+                      if (email == '@francisco.com.br' && password == '123') {
                         Navigator.pushNamed(
                             context, '/home'); // Navega para a HomePage
                       } else {
@@ -66,7 +77,9 @@ class _LoginPageState extends State<LoginPage> {
                       }
                     },
                     child: Text('Entrar'),
-                  )),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

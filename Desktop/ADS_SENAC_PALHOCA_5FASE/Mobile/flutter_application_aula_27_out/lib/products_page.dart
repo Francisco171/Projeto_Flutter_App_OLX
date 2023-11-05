@@ -18,47 +18,60 @@ class ProductsPage extends StatelessWidget {
           },
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Expanded(
-              child: Image.asset('assets/logo_olx2.jpg'),
-            ),
-            SizedBox(height: 20),
-            buildProductRow([
-              Product('assets/moda_feminina.jpg', 'Moda Feminina', 100.00),
-              Product('assets/oculos.jpg', 'Óculos', 50.00),
-            ]),
-            SizedBox(height: 20),
-            buildProductRow([
-              Product('assets/celular.jpg', 'Celular', 300.00),
-              Product('assets/jopatinete1.jpg', 'Patinete', 200.00),
-            ]),
-            SizedBox(height: 20),
-            buildProductRow([
-              Product('assets/bicicleta.png', 'Bicicleta', 400.00),
-              Product('assets/prancha_surf.jpg', 'Prancha Surf', 150.00),
-            ]),
-          ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(height: 50),
+              Image.asset('assets/logo_olx2.jpg'),
+              SizedBox(height: 50),
+              buildProductRows([
+                [
+                  Product(
+                      'assets/moda_feminina_1.jpg', 'Moda Feminina', 100.00),
+                  Product('assets/oculos_batton.jpg', 'Óculos', 50.00),
+                  Product('assets/smartphone_1.jpg', 'Celular', 300.00),
+                ],
+                [
+                  Product('assets/apple_pc.jpg', 'Desktop', 200.00),
+                  Product('assets/bicicleta.png', 'Bicicleta', 400.00),
+                  Product('assets/skateboard.jpg', 'Skate', 150.00),
+                ],
+              ]),
+              SizedBox(height: 20), // Aumenta o espaço vertical entre as linhas
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Widget buildProductRow(List<Product> products) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: products.map((product) {
-        return Column(
-          children: <Widget>[
-            buildProduct(product.imagePath, product.title),
-            SizedBox(height: 10),
-            Text(
-                'R\$ ${product.price.toStringAsFixed(2)}'), // Exibe o preço com cifrão "R$"
-          ],
-        );
-      }).toList(),
+  Widget buildProductRows(List<List<Product>> rows) {
+    List<Widget> rowWidgets = [];
+    for (List<Product> row in rows) {
+      rowWidgets.add(
+        Padding(
+          padding: const EdgeInsets.symmetric(
+              horizontal: 100), // Espaçamento horizontal de 100 pixels
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: row.map((product) {
+              return Column(
+                children: <Widget>[
+                  buildProduct(product.imagePath, product.title),
+                  SizedBox(height: 10),
+                  Text(
+                      'R\$ ${product.price.toStringAsFixed(2)}'), // Exibe o preço com cifrão "R$"
+                ],
+              );
+            }).toList(),
+          ),
+        ),
+      );
+    }
+    return Column(
+      children: rowWidgets,
     );
   }
 

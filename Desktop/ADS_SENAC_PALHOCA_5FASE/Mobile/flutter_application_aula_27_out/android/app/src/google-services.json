@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "771745528992",
+    "firebase_url": "https://crud-ads-ec61e-default-rtdb.firebaseio.com",
+    "project_id": "crud-ads-ec61e",
+    "storage_bucket": "crud-ads-ec61e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771745528992:android:b1a4254a38f1c98de01dc5",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_aula_27_out"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADiBMgK06rH1bmhXedOtOU1bFLUnvPhOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

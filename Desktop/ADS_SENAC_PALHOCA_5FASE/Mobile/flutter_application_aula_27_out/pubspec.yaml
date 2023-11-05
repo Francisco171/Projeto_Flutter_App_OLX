@@ -30,7 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.17.0
+  firebase_core:
+  firebase_auth:
+  cloud_firestore: ^2.2.0
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -63,13 +66,16 @@ flutter:
   assets:
     - assets/olx_mercado.webp
     - assets/logo_olx.jpg
-    - assets/celular.jpg
-    - assets/moda_feminina.jpg
-    - assets/oculos.jpg
+    - assets/smartphone_1.jpg
+    - assets/moda_feminina_1.jpg
     - assets/logo_olx2.jpg
-    - assets/jopatinete1.jpg
+    - assets/sunglasses_1.jpg
     - assets/prancha_surf.jpg
     - assets/bicicleta.png
+    - assets/apple_pc.jpg
+    - assets/skateboard.jpg
+    - assets/oculos_batton.jpg
+    
     
     
     
